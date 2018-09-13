@@ -148,9 +148,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReceitasController.cs" />
+    <Compile Include="Core\IEmail.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contato.cs" />
+    <Compile Include="Models\ManuelaIbiEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -267,13 +271,70 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\LogoView.cshtml" />
+    <Content Include="Views\Home\Atendimento.cshtml" />
+    <Content Include="Views\Home\Fitoterapia.cshtml" />
+    <Content Include="Views\Home\Servicos.cshtml" />
+    <Content Include="Views\Receitas\Alcachofra_ao_molho_de_cebola_roxa.cshtml" />
+    <Content Include="Views\Receitas\Bacalhau_com_requeijao_de_tofu_e_gengibre.cshtml" />
+    <Content Include="Views\Receitas\Bolo_de_cacau_e_aveia.cshtml" />
+    <Content Include="Views\Receitas\Bolo_de_coco_com_palatinose.cshtml" />
+    <Content Include="Views\Receitas\Bolo_de_Reis.cshtml" />
+    <Content Include="Views\Receitas\Bolo_nega_maluca.cshtml" />
+    <Content Include="Views\Receitas\Bolo_salgado_de_quinoa_e_atum_sem_gluten.cshtml" />
+    <Content Include="Views\Receitas\Brownie_de_abobora.cshtml" />
+    <Content Include="Views\Receitas\Cloud_bread.cshtml" />
+    <Content Include="Views\Receitas\Coscous_couve_flor.cshtml" />
+    <Content Include="Views\Receitas\Crocante_de_sementes_sem_glutem.cshtml" />
+    <Content Include="Views\Receitas\Crumble_low_carb_com_legumes.cshtml" />
+    <Content Include="Views\Receitas\Escondidinho_de_carne.cshtml" />
+    <Content Include="Views\Receitas\Escondidinho_de_frango_fit.cshtml" />
+    <Content Include="Views\Receitas\Fondue_fit_de_chocolate.cshtml" />
+    <Content Include="Views\Receitas\Fondue_fit_de_queijo.cshtml" />
+    <Content Include="Views\Receitas\Galette_de_sarraceno.cshtml" />
+    <Content Include="Views\Receitas\Golden_milk.cshtml" />
+    <Content Include="Views\Receitas\Hamburguer_de_abobora.cshtml" />
+    <Content Include="Views\Receitas\Hamburguer_de_feijao.cshtml" />
+    <Content Include="Views\Receitas\Homus_funcional.cshtml" />
+    <Content Include="Views\Receitas\Isotonico_caseiro.cshtml" />
+    <Content Include="Views\Receitas\Kibe_de_ervilha_partida.cshtml" />
+    <Content Include="Views\Receitas\Kibe_de_peixe.cshtml" />
+    <Content Include="Views\Receitas\Leite_de_aveia.cshtml" />
+    <Content Include="Views\Receitas\Maionese_de_abacate.cshtml" />
+    <Content Include="Views\Receitas\Maionese_de_tofu.cshtml" />
+    <Content Include="Views\Receitas\Maionese_de_tofu_e_abacate_ao_wassabi.cshtml" />
+    <Content Include="Views\Receitas\Mais_receitas.cshtml" />
+    <Content Include="Views\Receitas\Mandioqueijo_Queijo_de_mandioca.cshtml" />
+    <Content Include="Views\Receitas\Mini_bolinhos_de_chocolate_do_bem.cshtml" />
+    <Content Include="Views\Receitas\Mini_cuscuz_de_legumes_e_salvia.cshtml" />
+    <Content Include="Views\Receitas\Mini_sufles_de_abobora.cshtml" />
+    <Content Include="Views\Receitas\Molho_para_salada_Alho_com_iogurte.cshtml" />
+    <Content Include="Views\Receitas\Molho_para_salada_Mostarda.cshtml" />
+    <Content Include="Views\Receitas\Moqueca_de_palmito_pupunha_com_banana_da_terra.cshtml" />
+    <Content Include="Views\Receitas\Mousse_de_cacau.cshtml" />
+    <Content Include="Views\Receitas\Muffins_de_batata_doce.cshtml" />
+    <Content Include="Views\Receitas\Muffins_de_canela.cshtml" />
+    <Content Include="Views\Receitas\Nutella_funcional.cshtml" />
+    <Content Include="Views\Receitas\Panqueca_de_cacau_sacietogenica.cshtml" />
+    <Content Include="Views\Receitas\Panqueca_de_microondas.cshtml" />
+    <Content Include="Views\Receitas\Pao_de_batata_doce.cshtml" />
+    <Content Include="Views\Receitas\Pao_de_chia.cshtml" />
+    <Content Include="Views\Receitas\Pao_de_espinafre.cshtml" />
+    <Content Include="Views\Receitas\Pao_de_frigideira.cshtml" />
+    <Content Include="Views\Receitas\Pao_sem_gluten_de_milho_de_micro_ondas.cshtml" />
+    <Content Include="Views\Receitas\Pizza_de_omelete.cshtml" />
+    <Content Include="Views\Receitas\Pizza_sem_gluten_de_quinua.cshtml" />
+    <Content Include="Views\Receitas\Queijo_vegano.cshtml" />
+    <Content Include="Views\Receitas\Smoothie_de_banana_e_maca.cshtml" />
+    <Content Include="Views\Receitas\Smoothie_de_cacau.cshtml" />
+    <Content Include="Views\Receitas\Torta_de_banana_funcional.cshtml" />
+    <Content Include="Views\Receitas\Tortinhas_de_limao_maracuja_e_morango.cshtml" />
+    <Content Include="Views\Receitas\Tortinha_de_cebola_pure_rustico_agridoce.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -291,6 +352,9 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
