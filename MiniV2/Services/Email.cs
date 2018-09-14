@@ -10,19 +10,23 @@ namespace MiniV2.Services
     {
         public async Task SendAsync(Contato contato)
         {
-            var manuelaIbiEmail = new ManuelaIbiEmail();
+            var manuelaIbiEmail = new ManuelaIbiEmail
+            {
+                
+            };
 
             var smtpClient = new SmtpClient
             {
-                Host = "smtp.sendgrid.net",
+                Host = "smtp.manuelaibi.com.br",
                 Port = 587,
-                EnableSsl = true,
-                Credentials = new NetworkCredential(manuelaIbiEmail.Username, manuelaIbiEmail.Password)
+                EnableSsl = false,
+                Credentials = new NetworkCredential(manuelaIbiEmail.Username, manuelaIbiEmail.Password )
             };
 
-            string corpo = contato.Comentario + "\n\r Telefone: " + contato.Telefone;
+            string corpo = contato.Comentario + "\n\r Telefone: " + contato.Telefone +
+                                                "\n\r E-Mail:" + contato.Email;
 
-            using (var message = new MailMessage(contato.Email, "difiores@outlook.com")
+            using (var message = new MailMessage(manuelaIbiEmail.Username, "manuelaibi66@gmail.com")
             {
                 Subject = "Email de Manuela Ibi Nutrição Integrada",
                 Body = corpo

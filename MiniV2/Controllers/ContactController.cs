@@ -1,4 +1,5 @@
-﻿using MiniV2.Models;
+﻿using MiniV2.Core;
+using MiniV2.Models;
 using MiniV2.Services;
 using System;
 using System.Net.Mail;
