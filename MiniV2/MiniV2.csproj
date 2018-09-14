@@ -147,6 +147,7 @@
     <Content Include="Images\banner1.svg" />
     <Content Include="Images\banner2.svg" />
     <Content Include="Images\banner3.svg" />
+    <Content Include="Images\bioimpedancia_magnetica_250.jpg" />
     <Content Include="Images\Bolo_de_cacau_e_aveia_400.jpg" />
     <Content Include="Images\Bolo_de_coco_com_palatinose_400.jpg" />
     <Content Include="Images\Bolo_de_Reis_400.jpg" />
