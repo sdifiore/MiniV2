@@ -1,5 +1,4 @@
-﻿using MiniV2.Core;
-using MiniV2.Models;
+﻿using MiniV2.Models;
 using MiniV2.Services;
 using System;
 using System.Net.Mail;
@@ -43,8 +42,17 @@ namespace MiniV2.Controllers
                 return View(new Contato());
             }
 
-            var email = new Email();
-            await email.SendAsync(contato);
+            try
+            {
+                var email = new Email();
+                await email.SendAsync(contato);
+            }
+            catch
+            {
+                ViewBag.Message = "<div class='alert alert-danger' role='alert'>Ocorreu um erro desconhecido. Tente novamente</div>";
+
+                return View(new Contato());
+            }
 
             Response.Cookies["EmailEnviado"].Value = "true";
             Response.Cookies["EmailEnviado"].Expires = DateTime.Now.AddSeconds(30);
